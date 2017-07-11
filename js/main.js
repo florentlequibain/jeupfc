@@ -1,7 +1,7 @@
 var scorePc = 0;
 var scorePlayer = 0;
 var choixPc;
-var choixPlayer;
+var buttons = document.querySelectorAll("button");
 
 
 // fonction nombre random
@@ -10,50 +10,37 @@ function random() {
   }
 
 
-
 // fonction comparaison pfc
 function compare (x,y){
   if (x == y ){
-    // alert('égalité, le pc a choisi ' + y + '(ton score= '+scorePlayer+',le score du pc= '+scorePc+')');
+    document.getElementById('resultat').innerHTML=" égalité";
 
   } else if((x == 'pierre' && y =='ciseaux') || (x == 'ciseaux' && y == 'feuille') || (x == 'feuille' && y == 'pierre') ){
 
     scorePlayer++;
-    document.getElementById('playerscore').innerHTML=" scorePlayer";
-    // alert('gagné, le pc a choisi ' + y+ '(ton score= '+scorePlayer+',le score du pc= '+scorePc+')');
+    document.getElementById('playerscore').innerHTML= scorePlayer;
+    document.getElementById('resultat').innerHTML="Gagné, le computer a choisi "+choixPc;
 
   } else{
 
     scorePc ++;
-    document.getElementById('score').innerHTML=" scorePc";
-    // alert('perdu, le pc a choisi ' + y + '(ton score= '+scorePlayer+',le score du pc= '+scorePc+')');
-
+    document.getElementById('score').innerHTML= scorePc;
+    document.getElementById('resultat').innerHTML="Perdu, le computer a choisi "+choixPc;
   }
 }
 
 
 
-
 // script
-
-
-
-
-document.getElementById('pierre').onclick = {
-choixPlayer = 'pierre';
-
-document.getElementById('feuille').onclick ={
-choixPlayer = 'feuille';
-
-document.getElementById('ciseaux').onclick ={
-choixPlayer = 'ciseaux';
+for (i=0; i<buttons.length; i++ ){
+  buttons[i].addEventListener("click", function{
+    choixPlayer = buttons[i].innerHTML;
+  })
 }
-
 
 document.getElementById('start').onclick = function(){
   var name = prompt('Quel est ton nom ?');
-  console.log('hello');
-  document.getElementById('playername').innerHTML = " name ";
+  document.getElementById('playername').innerHTML =  name ;
 
   while(scorePlayer<3 && scorePc <3){
     var x = random();
