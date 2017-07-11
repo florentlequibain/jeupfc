@@ -105,6 +105,72 @@ textarea {
    ========================================================================== */
 
 
+  /*~~~~~~~~~~~~~~~~~~~~~~ common rules ~~~~~~~~~~~~~~~~~~~~~*/
+img{
+  width: 100%;
+  margin: 0;
+  height: auto;
+}
+  /*~~~~~~~~~~~~~~~~~~~~~~ end common rules ~~~~~~~~~~~~~~~~~~*/
+
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~ header ~~~~~~~~~~~~~~~~~~~~~*/
+h1{
+  text-align: center;
+}
+/*~~~~~~~~~~~~~~~~~~~~~~ End header ~~~~~~~~~~~~~~~~~~~~~*/
+
+
+/*~~~~~~~~~~~~~~~~~~~~~~ section ~~~~~~~~~~~~~~~~~~~~~*/
+section{
+  background-color: pink;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+.player, .computer{
+  background-color: lightblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.choixplayer{
+  margin: auto;
+}
+
+.player{
+  width: 30%;
+}
+
+.computer{
+  width: 65%;
+}
+
+.profilimg{
+width: 20%;
+}
+
+.itemplayer{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.imgchoix{
+  width: 30%;
+}
+
+#start{
+  width: 100%;
+  background-color: red;
+}
+
+
 
 
 
